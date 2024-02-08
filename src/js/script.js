@@ -25,5 +25,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
   });
   
+//хедер
+let lastScrollY = window.scrollY;
+const header = document.getElementById('header');
+const menuBtnMobile = document.querySelector('.menu-btn-mobile'); // Находим кнопку по классу
 
-  
+// Добавляем обработчик события на прокрутку
+window.addEventListener('scroll', () => {
+  if (lastScrollY < window.scrollY) {
+    header.style.top = '-100px';
+    header.classList.add('inverse');
+  } else {
+    header.style.top = '0';
+  }
+
+  lastScrollY = window.scrollY;
+});
+
+// Добавляем обработчик события на клик по кнопке
+menuBtnMobile.addEventListener('click', () => {
+  header.style.top = '-100%'; // Полное скрытие хедера
+  // Опционально: можно убрать класс 'inverse', если он мешает визуальному стилю при скрытом хедере
+  header.classList.remove('inverse');
+});

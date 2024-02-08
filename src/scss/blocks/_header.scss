@@ -1,17 +1,27 @@
+.header.inverse{
+  background: linear-gradient(45deg, #222D38, transparent);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
 .header {
-  position: fixed;
-  z-index: 1;
+  z-index: 98;
   width: 100%;
   height: auto;
-  padding: 20px 0 0 0;
+  padding: 20px 0;
   max-width: 100%;
   margin: 0 auto;
+  transition: top 0.3s linear;
+  position: fixed;
+
   //   backdrop-filter: contrast(0.5);
   .header_wrapp{
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 77px;
+  }
+  .logo_wrapp{
+    width: 160px;
   }
   .btns-wrapper{
     display: flex;

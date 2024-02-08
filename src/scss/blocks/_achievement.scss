@@ -39,14 +39,14 @@
 
 .achievement .achievement_images img {
     transform: translateX(100%);
-    transition: transform 0.5s ease-in;
+    transition: transform 0.8s ease-in;
     position: absolute;
     right: 0;
-    top: 0; /* Align images to the top of the container */
+    top: 0; 
     display: block;
-    width: 100%; /* Make sure images fill the container */
-    height: auto; /* Maintain aspect ratio */
-    opacity: 0; /* Start with images fully transparent */
+    width: 100%; 
+    height: auto;
+    opacity: 0;
 }
 
 .achievement .achievement_images img.visible {

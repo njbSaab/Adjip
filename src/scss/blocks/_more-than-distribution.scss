@@ -1,0 +1,17 @@
+.more_distribution{
+    .title{
+        padding-bottom: 0;
+    }
+    .more_distribution_group{
+        display: grid;
+        grid-template-columns: 55% 40%;
+        gap: rem(50px);
+        align-items: start;
+
+    }
+    .more_distribution_group_text{
+        p{
+            color: color(main-dark);
+        }
+    }
+}

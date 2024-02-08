@@ -1,0 +1,104 @@
+.partners{
+    position: relative;
+    &::after{
+        position: absolute;
+        content: '';
+        width: 80%;
+        height: 2px;
+        background: linear-gradient(90deg, #ffff, #76A0CD, #ffff );
+        bottom: 0%;
+        transform: translateX(-50%);
+        left: 50%;
+        // animation: slide-in-out 5s linear infinite forwards; 
+        z-index: 1;
+    }
+
+    .partners_wrapper{
+        display: grid;
+        gap: rem(50px);
+        grid-template-columns: rem(450px) 1fr;
+    }
+    .overlay-wrapper{
+        position: relative;
+        padding-bottom: 70px;
+    }
+    .overlay-bg{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: color(light-bg);
+        transform: translate(10%, -10%);
+    }
+    .uk-card-default{
+        background-color: transparent;
+        box-shadow: none;
+    }
+    .uk-card-body{
+        padding: 13px 0;
+    }
+    .uk-card-body p {
+        margin: 5px 0;
+    }
+    .uk-card-body .uk-card-title{
+        margin-bottom: 0;
+        color: color(main-dark);
+    }
+    .uk-card-body{
+        color: color(main-dark);
+    }
+    .uk-card-body .card-link-read{
+        color: color(main-dark);
+        text-decoration: underline;
+        font-size: 13px;
+    }
+    .uk-card-media-top{
+        height: 381px;
+    }
+    .uk-card-media-top img{
+        height: 100%;
+        object-fit: cover;
+    }
+    .uk-slider-container-offset{
+        padding: 11px 25px 85px 25px;
+
+    }
+    .parters_arrow_wrapp{
+        position: relative;
+        a{
+            border: 1px solid color(main);
+            border-radius: 50%;
+            padding: 14.97px 17.72px 15px 18.17px;
+            svg{
+                width: 15px;
+                height: 15px;
+            }
+        }
+        a:first-child{
+            margin-right: 100px;
+        }
+    }
+
+    .partners_list{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+@keyframes slide-in-out {
+    0% {
+      transform: translateX(-100%); /* Начать с левого края экрана */
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100%); /* Уход за правый край экрана */
+      opacity: 0;
+    }
+  }
+  

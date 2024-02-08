@@ -1,0 +1,249 @@
+@use "sass:math";
+
+// $scrollbar-color: #F8F8F8; // Цвет полосы прокрутки
+
+// Функция для получения значений вьюпортных единиц (vw) на основе пикселей
+@function get-vw($px) {
+  $vw-context: ($layout-width * 0.01) * 1px; // Контекст вьюпортных единиц
+  @return math.div($px, $vw-context) * 1vw;
+}
+
+// Функция для получения значений вьюпортных единиц (vw) на основе пикселей с учетом ширины макета
+@function get-vw-by-layout($px, $layout: $layout-width) {
+  $vw-context: ($layout * 0.01) * 1px; // Контекст вьюпортных единиц
+  @return math.div($px, $vw-context) * 1vw;
+}
+
+// Функция для конвертации пикселей в ремы
+@function rem($px) {
+  // Проверка, является ли значение числом с единицей измерения "px"
+  @if type-of($px) == "number" and unit($px) == "px" {
+    // Удаление единицы измерения и преобразование в ремы
+    @return math.div($px, 16px) * 1rem;
+  } @else if type-of($px) == "number" {
+    // Преобразование числового значения без единиц измерения в ремы
+    @return math.div($px, 16) * 1rem;
+  } @else {
+    // Возвращение исходного значения, если оно не является числом
+    @return $px;
+  }
+}
+
+// Функция для проверки, является ли значение пикселями
+@function is-pixels($value) {
+  @return type-of($value) == "number" and index("px", unit($value)) != null;
+}
+
+// Миксин для установки межбуквенного интервала с использованием em единиц измерения
+@mixin letter-space($spacing) {
+  letter-spacing: math.div($spacing, 1000) * 1em;
+}
+
+// Вспомогательный миксин для установки стилей текста (размер шрифта, высота строки и межбуквенный интервал) в ремах
+@mixin fontSize($fontSize, $lineHeight: 0) {
+  font-size: #{math.div($fontSize, 16)}rem;
+  @if $lineHeight != 0 {
+    line-height: $lineHeight / $fontSize;
+  }
+}
+
+
+// Миксин для определения собственных шрифтовых семейств и подключения соответствующих файлов шрифтов
+@mixin font-face($font-family, $file-path, $weight: 400, $style: normal) {
+  @font-face {
+    font-family: $font-family;
+    src: url("#{$file-path}.eot");
+    src:
+      url("#{$file-path}.eot?#iefix") format("embedded-opentype"),
+      url("#{$file-path}.woff") format("woff"),
+      url("#{$file-path}.ttf") format("truetype");
+    font-weight: $weight;
+    font-style: unquote($style);
+    font-display: swap;
+    font-stretch: normal;
+  }
+}
+
+// Миксины для создания медиа-запросов
+
+// Минимальная ширина экрана
+@mixin mediaMin($media) {
+  @media (min-width: $media + px) {
+    @content;
+  }
+}
+
+// Максимальная ширина экрана
+@mixin mediaMax($media) {
+  @media (max-width: $media + px) {
+    @content;
+  }
+}
+
+// Диапазон ширины экрана от минимальной до максимальной
+@mixin mediaMinMax($min, $max) {
+  @media (min-width: $min + px) and (max-width: $max + px) {
+    @content;
+  }
+}
+
+// Миксин для стилизации плейсхолдера в текстовых полях
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+// Миксин для настройки стилей полосы прокрутки в веб-приложениях
+// @mixin scrollbar($size: 10px, $color: $scrollbar-color) {
+//     &::-webkit-scrollbar {
+//         width: $size;
+//         height: $size;
+//         cursor: pointer;
+//     }
+//     &::-webkit-scrollbar-track {
+//         cursor: pointer;
+//         background: rgba($color, 0.3);
+//     }
+//     &::-webkit-scrollbar-thumb {
+//         background: rgba($color, 0.8);
+//     }
+//     &::-webkit-scrollbar-thumb:hover {
+//         background: rgba($color, 1);
+//     }
+// }
+
+// Миксин для настройки стилей полосы прокрутки с возможностью выбора цвета и закругления углов
+@mixin scrollbar-variable($size: 10px, $color: "base", $rounded: false) {
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+    cursor: pointer;
+  }
+  &::-webkit-scrollbar-track {
+    cursor: pointer;
+    background: color($color, $a: -0.7);
+    @if $rounded {
+      border-radius: $size * 2;
+    }
+  }
+  &::-webkit-scrollbar-thumb {
+    background: color($color, $a: -0.2);
+    @if $rounded {
+      border-radius: $size * 2;
+    }
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: color($color);
+  }
+}
+
+// Миксин для скрытия полосы прокрутки в веб-приложениях
+@mixin scrollbar-hide() {
+  &::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+}
+
+// Миксин для создания переходов с поддержкой нескольких свойств, длительности и функции плавности
+@mixin transition($prop, $time: 150ms, $easing: ease-in) {
+  $transition: ();
+  @for $i from 1 through length($prop) {
+    @for $j from 0 to (length($prop)) - (length($time)) {
+      $time: join($time, nth($time, -1));
+    }
+    @for $j from 0 to (length($prop)) - (length($easing)) {
+      $easing: join($easing, nth($easing, -1));
+    }
+    $transition: append(
+      $transition,
+      (nth($prop, $i) nth($time, $i) nth($easing, $i)),
+      comma
+    );
+  }
+  transition: $transition;
+
+  $separated: ();
+  @if length($prop) > 1 {
+    @for $i from 1 through length($prop) {
+      $separated: append($separated, nth($prop, $i), comma);
+    }
+    will-change: $separated;
+  } @else if length($prop) == 1 {
+    @if $prop != "all" {
+      will-change: $prop;
+    }
+  }
+}
+
+// Миксин для создания блока с фиксированным соотношением сторон (например, для изображений)
+@mixin aspect-ratio($width, $height, $element: iframe) {
+  width: 100%;
+  position: relative;
+  &:after {
+    display: flex;
+    content: "";
+    width: 100%;
+    padding-top: math.div($height, $width) * 100%;
+  }
+  > #{$element} {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    @if ($element == "video" or $element == "iframe") {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+}
+
+// Миксин для определения пользовательских цветов в формате HSLA
+@mixin define-color($name, $hex) {
+  :root {
+    --backotech-#{$name}-h: #{hue($hex)};
+    --backotech-#{$name}-s: #{saturation($hex)};
+    --backotech-#{$name}-l: #{lightness($hex)};
+    --backotech-#{$name}-a: #{alpha($hex)};
+  }
+}
+
+// Функция для использования пользовательских цветов в формате HSLA с возможностью настройки оттенка, насыщенности, светлоты и прозрачности
+@function color($name, $l: 0%, $s: 0%, $a: 0) {
+  @return hsla(
+    var(--backotech-#{$name}-h),
+    calc(var(--backotech-#{$name}-s) + #{$s}),
+    calc(var(--backotech-#{$name}-l) + #{$l}),
+    calc(var(--backotech-#{$name}-a) + #{$a})
+  );
+}
+
+// Миксин для центрирования элементов с использованием flexbox с возможностью задать отступ и расстояние между элементами
+@mixin flex-center-gap-pad($gap: 0, $padding: 0) {
+  display: flex;
+  gap: $gap;
+  padding: px-to-rem($padding);
+  align-items: center;
+  justify-content: center;
+}
+
+// Миксин для установки жирности шрифта
+@mixin fw($size: 0) {
+  font-weight: $size;
+}

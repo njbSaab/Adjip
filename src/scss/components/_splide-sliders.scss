@@ -1,0 +1,65 @@
+#more-than-distr-slider .splide__track {
+    height: 550px;
+    border-radius: 50%;
+}
+
+.splide__slide.is-active.is-visible{
+    height: auto !important;
+}
+.splide__track--nav>.splide__list>.splide__slide.is-active{
+    border: 3px solid color('light-bg');
+    opacity: 1 !important;
+    position: relative;
+    &::after{
+        content: "";
+        width: 100%;
+        height: 3px;
+        background: color('main');
+        bottom: 0;
+        
+    }
+}
+.splide__track--nav>.splide__list>.splide__slide{
+    opacity: .3;
+}
+.more_distribution_group_gallery {
+    position: relative; 
+  }
+
+#more-than-distr-thumbnail-slider {
+    position: absolute;
+    bottom: 0; /* Располагаем миниатюры внизу галереи */
+    width: 100%; /* Растягиваем миниатюры на всю ширину галереи */
+    backdrop-filter: blur(10px); /* Применяем эффект размытия к фону миниатюр */
+    -webkit-backdrop-filter: blur(10px); /* Для поддержки в Safari */
+    li{
+        margin: 0 !important;
+    }
+  }
+
+  .splide__arrow {
+    background-color: #000; /* Цвет фона */
+    border-radius: 50%; /* Круглая форма */
+    width: 40px; /* Ширина кнопки */
+    height: 40px; /* Высота кнопки */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .splide__arrow svg{
+    fill: color(main);
+  }
+  
+  .splide__arrow:hover {
+    background-color: #444; /* Цвет фона при наведении */
+  }
+  .more-than-distr-progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #76A0CD 60%, #ffff );
+    z-index: 10;
+    transition: width .1s linear;
+}

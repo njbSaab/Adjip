@@ -1,0 +1,51 @@
+
+.advateges{
+    .title{
+        transform: translateY(100px);
+    }
+
+    [uk-cover]:where(img,video) {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 60%;
+        height: 60%;
+        box-sizing: border-box;
+        object-fit: cover;
+        object-position: center;
+        transform: translateY(-50%);
+    }
+    .uk-card-default {
+        background-color: #fff;
+        color: color('dark');
+        box-shadow: 0 5px 5px 0 rgba(0,0,0,.25);
+        margin-right: 5px;
+    }
+
+    .uk-card-default .uk-card-title{
+        color: color('main-dark');
+        font-size: 20px;
+    }
+
+    .uk-list li{
+        font-size: 16px;
+    }
+
+    .advantages_arrows{
+        position: relative;
+        transform: translateY(-100px);
+        a{
+            border: 1px solid color(main);
+            border-radius: 50%;
+            padding: 14.97px 17.72px 15px 18.17px;
+            svg{
+                width: 15px;
+                height: 15px;
+            }
+        }
+        a:first-child{
+            margin-right: 100px;
+        }
+    }
+
+}

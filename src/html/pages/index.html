@@ -1,5 +1,12 @@
-{% extends "layouts/main.html" %} {% block content %}
+{% extends "layouts/main.html" %} 
 
-<h1>hello world with index/html</h1>
+{% block content %} 
+
+{% include "pages/main-page.html" %}
+{% include "pages/about.html" %}
+{% include "pages/advantages.html" %}
+{% include "pages/achievement.html" %}
+{% include "pages/partner.html" %}
+{% include "pages/more-than-distribution.html" %}
 
 {% endblock %}

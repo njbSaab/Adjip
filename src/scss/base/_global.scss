@@ -1,0 +1,18 @@
+.modal.uk-modal-dialog{
+    width: fit-content;
+}
+.side-nav.uk-offcanvas-overlay::before {
+    z-index: 1;
+    background: rgba(0,0,0,.4);
+}
+.side-nav .side-nav-body{
+    z-index: 99;
+    background: linear-gradient(90deg, #222D38, transparent);
+    backdrop-filter: blur(10px);
+}
+.uk-open>.modal.uk-modal-dialog {
+    transform: translateY(80%);
+}
+.nav-wrapper .parent-link:hover{
+    color: rgba(255,255,255,0.9);
+}

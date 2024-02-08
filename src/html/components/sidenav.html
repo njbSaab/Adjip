@@ -1,0 +1,35 @@
+<div class="menu-btn-mobile uk-button" type="button" uk-toggle="target: #offcanvas-flip">
+    <svg xmlns="http://www.w3.org/2000/svg" width="53" height="28" viewBox="0 0 53 28" fill="none">
+        <rect width="53" height="2" fill="white"/>
+        <rect x="10" y="13" width="43" height="2" fill="white"/>
+        <rect x="21" y="26" width="32" height="2" fill="white"/>
+      </svg>
+</div>
+
+<div class="side-nav" id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
+    <div class="uk-offcanvas-bar side-nav-body">
+
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+
+        <div class="uk-width-1-2@s nav-wrapper">
+            <ul class="uk-nav-primary" uk-nav>
+                <li class="uk-active"><a href="#">Active</a></li>
+                <li class="uk-parent">
+                    <a class="parent-link" href="#">Parent <span uk-nav-parent-icon></span></a>
+                    <ul class="uk-nav-sub">
+                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Sub item</a></li>
+                    </ul>
+                </li>
+                <li class="uk-parent">
+                    <a class="parent-link" href="#">Parent <span uk-nav-parent-icon></span></a>
+                    <ul class="uk-nav-sub">
+                        <li><a href="#">Sub item</a></li>
+                        <li><a href="#">Sub item</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Item</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

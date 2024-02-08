@@ -1,0 +1,25 @@
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+html{
+  @include fontSize(19px);
+}
+
+body {
+    color: color('dark');
+    background: color('light');
+}
+
+h1 {
+  color: color('light');
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  li{
+    list-style: none;
+  }
+}
+

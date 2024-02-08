@@ -1,0 +1,19 @@
+.about{
+    background: linear-gradient(90deg, #222D38, #76A0CD);
+    color: color(light);
+    .title{
+        color: color(light);
+        text-align: center;
+        padding-bottom: 0;
+    }
+    .about_list{
+        padding: 0;
+        margin: 0;
+    }
+    .about_list p{
+        font-size: rem(19px);
+        font-weight: 500;
+        padding: 0;
+        margin: 0;
+    }
+}

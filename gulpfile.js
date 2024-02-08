@@ -10,7 +10,6 @@ const njk = require("gulp-nunjucks-render");
 const sourcemaps = require("gulp-sourcemaps");
 
 const libraries = [
-  "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
   "./node_modules/jquery/dist/jquery.min.js",
   "./node_modules/swiper/swiper-bundle.min.js",
 ];
@@ -27,7 +26,7 @@ gulp.task("server", function () {
 
 gulp.task("styles", function () {
   return gulp
-    .src("src/sass/**/*.+(scss|sass)")
+    .src("src/scss/**/*.+(scss|sass)")
     .pipe(sourcemaps.init())
     .pipe(
       sass({
@@ -53,7 +52,7 @@ gulp.task("styles", function () {
 });
 
 gulp.task("watch", function () {
-  gulp.watch("src/sass/**/*.+(scss|sass|css)", gulp.parallel("styles"));
+  gulp.watch("src/scss/**/*.+(scss|sass|css)", gulp.parallel("styles"));
   gulp.watch("src/html/**/*").on("change", gulp.parallel("templates"));
   gulp.watch("src/js/**/*.js").on("change", gulp.parallel("scripts"));
   gulp.watch("src/fonts/**/*").on("all", gulp.parallel("fonts"));

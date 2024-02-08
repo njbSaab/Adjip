@@ -4,29 +4,33 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ecoculture</title>
+    <title>Adjip</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
     />
     <link rel="stylesheet" href="./css/style.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/uikit@3.17.10/dist/css/uikit.min.css"
+    />
   </head>
   <body>
     {% include "components/header.html" %}
 
-    <aside class="sidebar"></aside>
-
-    <main class="content">
-      <div class="container">{% block content %}{% endblock %}</div>
-    </main>
+    <main class="content">{% block content %}{% endblock %}</main>
 
     {% include "components/footer.html" %}
 
     <script src="./js/jquery.min.js"></script>
-    <script src="./js/bootstrap.bundle.min.js"></script>
-    <script src="./js/jquery.validate.min.js"></script>
-    <script src="./js/jquery.maskedinput.min.js"></script>
     <script src="./js/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.10/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.10/dist/js/uikit-icons.min.js"></script>
+
+    <!-- <script src="./js/jquery.validate.min.js"></script>
+    <script src="./js/jquery.maskedinput.min.js"></script> -->
+
     <script src="./js/script.js"></script>
+    <script src="./js/imports.js" type="module"></script>
   </body>
 </html>

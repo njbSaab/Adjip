@@ -1,0 +1,90 @@
+.main_page {
+  background-image: url('/img/main-bg.png');
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  z-index: 0;
+  background-color: color(main);
+  h1{
+    color: color(light);
+    margin: 0;
+  }
+  .main_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .main_banner{
+    padding-top: rem(20px);
+  }
+  .main_title_wrapper{
+    display: flex;
+    gap: rem(24px);
+    height: rem(150px);
+    padding-left: rem(77px);
+    .main_title{
+      position: relative;
+      z-index: 1;
+      &::before{
+        content: url('/img/big-logo.svg');
+        position: absolute;
+        top: -150%;
+        left: 0;
+        z-index: -1;
+      }
+    }
+    .main_line{
+      height: 100%;
+      width: rem(6px);
+      background: color('light');
+    }
+  }
+
+  .main_footer_wrapper{
+    position: relative;
+    z-index: 0;
+    padding-left: rem(77px);
+    .main_list{
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: rem(69px);
+      li{
+        position: relative;
+        &::before{
+          content: "";
+          position: absolute;
+          width: rem(24px);
+          height: rem(24px);
+          top: 0;
+          left: 0;
+          background-image: url('/img/ellipse.svg');
+        }
+      }
+      li{
+        padding: 0 0 0 40px;
+      }
+      li p{
+        color: color('light');
+        margin: -5px 0 0;
+      }
+    }
+  }
+  @keyframes drawn {
+    0% {
+      stroke-dashoffset: 1000; /* Замените на фактическую длину вашего пути */
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+  .drawn-path { /* Исправьте на '.draw-path' */
+    stroke-dasharray: 1000; /* Замените 1000 на фактическую длину вашего пути */
+    stroke-dashoffset: 1000; /* Замените 1000 на фактическую длину вашего пути */
+    animation: drawn 5s linear infinite alternate;
+    stroke: white;
+    stroke-width: 2.5; 
+  }
+  
+}
+

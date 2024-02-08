@@ -27,6 +27,7 @@
     "sass": "^1.63.6"
   },
   "dependencies": {
+    "@splidejs/splide": "^4.1.4",
     "animate.css": "^4.1.1",
     "bootstrap": "^4.6.2",
     "gulp-sourcemaps": "^3.0.0",

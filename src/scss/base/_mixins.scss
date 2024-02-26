@@ -43,10 +43,9 @@
 @mixin fontSize($fontSize, $lineHeight: 0) {
   font-size: #{math.div($fontSize, 16)}rem;
   @if $lineHeight != 0 {
-    line-height: $lineHeight / $fontSize;
+    line-height: calc($lineHeight / $fontSize);
   }
 }
-
 
 // Миксин для определения собственных шрифтовых семейств и подключения соответствующих файлов шрифтов
 @mixin font-face($font-family, $file-path, $weight: 400, $style: normal) {

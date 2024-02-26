@@ -1,0 +1,100 @@
+.how-we-work {
+  position: relative;
+  background-image: url("../../img/offer/offer.png");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  &::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: color(main-dark);
+    opacity: 0.8;
+    z-index: 0;
+  }
+  .how-we-work_content {
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    color: color(light);
+  }
+  .item_title {
+    position: absolute;
+    width: fit-content;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    h2 {
+      text-align: center;
+      color: color(light);
+      @include fontSize(47, 45);
+      position: relative;
+      &::before {
+        position: absolute;
+        content: "";
+        border-radius: 50%;
+        background: color(main-dark);
+        width: 300px;
+        height: 300px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+      }
+    }
+  }
+  .list {
+    max-width: 1440px;
+    width: 100%;
+    height: 90%;
+    display: grid;
+    gap: 0 20%;
+    grid-template-areas:
+      "manufacturer distribution"
+      "bayer retail";
+    margin: auto auto;
+    padding: rem(60px) 0;
+  }
+  .item {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: rem(585px);
+  }
+  .item img {
+    height: 300px;
+    width: 600px;
+  }
+  .item p {
+    @include fontSize(35, 45);
+    height: 50px;
+    position: relative;
+  }
+  .item:nth-child(1) {
+    grid-area: manufacturer;
+  }
+  .item:nth-child(2) {
+    grid-area: bayer;
+    flex-direction: column-reverse;
+    .svg_wrapp {
+      display: block;
+      margin-left: auto;
+    }
+  }
+  .item:nth-child(3) {
+    grid-area: distribution;
+    p {
+      margin-left: auto;
+    }
+  }
+  .item:nth-child(4) {
+    grid-area: retail;
+    flex-direction: column-reverse;
+    p {
+      margin-left: auto;
+    }
+  }
+}

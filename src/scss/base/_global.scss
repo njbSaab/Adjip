@@ -1,18 +1,59 @@
-.modal.uk-modal-dialog{
-    width: fit-content;
+$main-dark: #222d38;
+$light: #ffffff;
+$main: #76a0cd;
+
+.modal.uk-modal-dialog {
+  width: fit-content;
 }
-.side-nav.uk-offcanvas-overlay::before {
-    z-index: 1;
-    background: rgba(0,0,0,.4);
+.uk-open .modal.uk-modal-dialog {
+  transform: translateY(80%);
 }
-.side-nav .side-nav-body{
-    z-index: 99;
-    background: linear-gradient(90deg, #222D38, transparent);
-    backdrop-filter: blur(10px);
+.registration_modal .uk-modal-dialog {
+  transform: translateY(15%) !important;
 }
-.uk-open>.modal.uk-modal-dialog {
-    transform: translateY(80%);
+.nav-wrapper .parent-link:hover {
+  color: rgba(255, 255, 255, 0.9);
 }
-.nav-wrapper .parent-link:hover{
-    color: rgba(255,255,255,0.9);
+.input-wrapper .uk-input {
+  max-width: 100%;
+  width: 100%;
+  border: 0 none;
+  padding: 0 10px;
+  background: #fff;
+  color: #666;
+  border-bottom: 1px solid #e5e5e5;
+  transition: 0.2s ease-in-out;
+}
+.uk-button-primary {
+  background-color: $main;
+  color: $light;
+}
+
+.uk-button-default {
+  background-color: transparent;
+  color: $light;
+}
+.btns-wrapper {
+  .uk-button {
+    width: 100%;
+    border-radius: 30px;
+  }
+  .nj-default-btn {
+    border: none;
+    text-decoration: underline;
+    background: transparent;
+    cursor: pointer;
+  }
+  a {
+    cursor: pointer;
+  }
+  button:is(:hover, :focus-visible),
+  a:hover,
+  a:focus-visible {
+    filter: brightness(115%);
+  }
+  a:active,
+  button:active {
+    filter: brightness(85%);
+  }
 }

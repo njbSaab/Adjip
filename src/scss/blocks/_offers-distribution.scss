@@ -1,0 +1,89 @@
+.distribution_offer {
+  &.pd-regular {
+    padding: 0;
+  }
+  .title_wrapp {
+    position: relative;
+    padding: 65px 0;
+    text-wrap: wrap;
+    text-align: center;
+    background-image: url("../../img/offer/offer_header.png");
+    &::after {
+      position: absolute;
+      left: 0;
+      top: 0;
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: color(main-dark);
+      opacity: 0.8;
+      z-index: 0;
+    }
+    .title {
+      color: color(light);
+      position: relative;
+      z-index: 1;
+      width: 30%;
+      margin: auto;
+    }
+  }
+  .list {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: rem(35px);
+    position: relative;
+    &::after {
+      position: absolute;
+      content: "";
+      width: 80%;
+      height: 2px;
+      background: linear-gradient(90deg, #ffff, #76a0cd, #ffff);
+      bottom: -30%;
+      transform: translateX(-50%);
+      left: 50%;
+      // animation: slide-in-out 5s linear infinite forwards;
+      z-index: 1;
+    }
+  }
+  .list li {
+    flex-basis: rem(300px);
+    text-wrap: balance;
+    text-align: center;
+    transform: translateY(-30%);
+  }
+  .list .svg_wrapp {
+    background: color(light);
+    border-radius: 50%;
+    padding: 20px;
+    max-width: fit-content;
+    margin: auto;
+  }
+  .list svg {
+    width: 80px;
+    height: 80px;
+  }
+  .list p {
+    margin: 0;
+    height: 50px;
+  }
+  .list-description {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: rem(0px) rem(40px);
+    padding: 0;
+    margin: rem(120px) 0 rem(40px);
+    li {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      max-width: 350px;
+    }
+    li .svg_wrapp {
+      flex: 0 0 24px;
+    }
+    li svg {
+      width: 100%;
+    }
+  }
+}

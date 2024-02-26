@@ -1,0 +1,74 @@
+<button
+  class="sing-in uk-button uk-button-default uk-margin-small-center"
+  type="button"
+  uk-toggle="target: #modal-enter"
+>
+  Вход
+</button>
+
+<div class="enter_modal nj_modal" id="modal-enter" uk-modal>
+  <div class="modal uk-modal-dialog uk-modal-body uk-text-center">
+    <div class="title_wrapper">
+      <button
+        class="uk-modal-close uk-icon uk-close close-btn"
+        type="button"
+        uk-close=""
+        aria-label="Close"
+      >
+        <svg width="14" height="14" viewBox="0 0 14 14">
+          <line
+            fill="none"
+            stroke="#000"
+            stroke-width="1.1"
+            x1="1"
+            y1="1"
+            x2="13"
+            y2="13"
+          ></line>
+          <line
+            fill="none"
+            stroke="#000"
+            stroke-width="1.1"
+            x1="13"
+            y1="1"
+            x2="1"
+            y2="13"
+          ></line>
+        </svg>
+      </button>
+      <h2 class="uk-modal-title">Вход</h2>
+    </div>
+    <form>
+      <div class="uk-margin">
+        <div class="uk-inline input-wrapper">
+          <input
+            class="uk-input"
+            placeholder="Логин"
+            type="text"
+            uk-tooltip="Введите логин"
+          />
+        </div>
+      </div>
+
+      <div class="uk-margin">
+        <div class="uk-inline input-wrapper">
+          <input
+            class="uk-input"
+            placeholder="Пароль"
+            type="text"
+            uk-tooltip="Введите Пароль"
+          />
+        </div>
+      </div>
+    </form>
+    <div class="uk-text-center auth_wrapper btns-wrapper">
+      <button class="uk-button uk-button-primary" type="button">
+        Авторизоваться
+      </button>
+      <div class="auth_buttons">
+        {% include "components/registration-form.html" %} {% include
+        "components/forget-form.html" %}
+      </div>
+    </div>
+  </div>
+</div>

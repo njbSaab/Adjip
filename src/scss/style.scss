@@ -11,10 +11,13 @@
 @import "blocks/about";
 @import "blocks/achievement";
 @import "blocks/advantages";
+@import "blocks/_offers-distribution.scss";
 @import "blocks/more-than-distribution";
+@import "blocks/how-we-work";
 @import "blocks/partner";
 @import "blocks/footer";
 
 @import "components/splide-sliders";
+@import "components/sidenav";
 @import "components/buttons";
-
+@import "components/modal";

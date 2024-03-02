@@ -10,9 +10,10 @@
 
 // Функция для получения значений вьюпортных единиц (vw) на основе пикселей с учетом ширины макета
 @function get-vw-by-layout($px, $layout: $layout-width) {
-  $vw-context: ($layout * 0.01) * 1px; // Контекст вьюпортных единиц
-  @return math.div($px, $vw-context) * 1vw;
+  $vw-context: $layout * 0.01;
+  @return #{math.div($px, $vw-context)}vw;
 }
+
 
 // Функция для конвертации пикселей в ремы
 @function rem($px) {
@@ -245,4 +246,15 @@
 // Миксин для установки жирности шрифта
 @mixin fw($size: 0) {
   font-weight: $size;
+}
+
+@mixin max-width-margin($max-width, $width, $margin) {
+  max-width: $max-width;
+  width: $width;
+  
+  @if $margin == auto {
+    margin: 0 auto;
+  } @else {
+    margin: $margin;
+  }
 }

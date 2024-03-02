@@ -19,3 +19,13 @@
     margin: 0;
   }
 }
+@media (max-width: 450px){
+  .about {
+    .title{
+      margin-bottom: 20px;
+    }
+    .about_list p{
+      @include fontSize(15)
+    }
+  } 
+}

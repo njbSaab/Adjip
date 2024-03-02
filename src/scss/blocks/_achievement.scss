@@ -64,3 +64,33 @@
   opacity: 1;
   transition: opacity 0.6s ease-in;
 }
+
+@media (max-width: 1024px){
+  .achievement{
+    .title{
+      padding: 0 0 10px;
+    }
+    .achievement_list{
+      flex: 1 1 auto
+    }
+    .achievement_list li{
+      @include fontSize(18)
+    }
+    .achievement_images{
+      display: none;
+    }
+  }
+}
+@media (max-width: 450px){
+  .achievement{
+    .achievement_list.uk-list.uk-list-disc{
+      margin-bottom: 0;
+    }
+    .achievement_list li{
+      @include fontSize(15)
+    }
+    .title{
+      padding: 0px;
+    }
+  }
+}

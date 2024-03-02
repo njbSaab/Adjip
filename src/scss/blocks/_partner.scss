@@ -89,7 +89,72 @@
     opacity: 1;
   }
   100% {
-    transform: translateX(100%); /* Уход за правый край экрана */
+    transform: translateX(100%);
     opacity: 0;
+  }
+}
+@media (max-width: 1250px){
+  .partners{
+    .partners_wrapper{
+      grid-template-columns: 38% 60%;
+      gap: 2%;
+    }
+    .uk-card-body p {
+      @include fontSize(15)
+    }
+    .partners_list{
+      li{
+        @include fontSize(15)
+      }
+    }
+  }
+}
+@media (max-width: 767px){
+  .partners{
+    .partners_wrapper{
+      grid-template-columns: 45% 50%;
+      gap: 5%;
+    }
+    .partners_list{
+      li{
+        @include fontSize(15)
+      }
+    }
+  }
+}
+@media (max-width: 550px){
+  .partners{
+    .partners_wrapper{
+      grid-template-columns: 100%;
+      gap: 70px;
+    }
+    .partners_list{
+      padding-left: 0;
+      max-width: 100%;
+      li{
+        @include fontSize(15);
+        max-width: 100%;
+      }
+    }
+    .uk-slider-items{
+      max-width: 100%;
+      padding: 0 10px; 
+    }
+    .uk-card-body p {
+      @include fontSize(13)
+    }
+  }
+  
+  .partners .partners_list {
+    gap: 10px;
+  }
+  .partners .uk-card-media-top img{
+    aspect-ratio: 4/3;
+  }
+  .partners .overlay-wrapper{
+    max-width: 100%;
+  }
+  .uk-grid>* {
+    padding-left: 0px;
   }
 }

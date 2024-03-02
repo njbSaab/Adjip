@@ -47,3 +47,69 @@
     }
   }
 }
+@media (max-width: 1200px){
+  .advateges{
+    .title {
+      transform: translateY(0px);
+      padding-top: 20px;
+      margin: 0;
+    }
+  }
+  .advateges .uk-card-default{
+    width: 100%;
+  }
+  .advateges .uk-position-cover{
+    display: none;
+  }
+}
+@media (max-width: 1024px){
+  .advateges .uk-slideshow{
+    height: auto;
+    padding-bottom: 50px;
+  }
+  .advateges [class*=uk-position-center-right] {
+    top: calc(40% - var(--uk-position-margin-offset));
+    --uk-position-translate-y: -50%;
+    transform: translate(0, var(--uk-position-translate-y));
+  }
+  .advateges .advantages_arrows {
+    position: relative;
+    transform: translateY(-30px);
+  }
+}
+@media (max-width: 550px){
+  .advateges .uk-slideshow{
+    height: 550px;
+  }
+  .advateges .uk-card-body {
+    padding: 5px 10px 10px;
+  }
+  .advateges .advantages_arrows {
+    position: relative;
+    transform: translateY(-82px);
+  }
+
+}
+@media (max-width: 450px){
+  .advateges .title{
+    padding-bottom: 20px;
+  }
+  .advateges .uk-slideshow{
+    height: 600px;
+  }
+  .advateges .uk-slideshow ul{
+    height: 100%;
+  }
+  .advateges [class*=uk-position-center-right] {
+    top: calc(45% - var(--uk-position-margin-offset));
+    --uk-position-translate-y: -50%;
+    transform: translate(0, var(--uk-position-translate-y));
+  }
+  .advateges .advantages_arrows {
+    position: relative;
+    transform: translateY(-62px);
+  }
+  .advateges .uk-list li {
+    padding-left: 0;
+  }
+}

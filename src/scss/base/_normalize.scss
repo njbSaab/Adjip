@@ -1,13 +1,24 @@
 * {
   font-family: "Inter", sans-serif;
 }
-html {
-  @include fontSize(19px);
-}
+$layout-width: 1920px;
 
-body {
-  color: color("dark");
-  background: color("light");
+body{
+    font-size: get-vw-by-layout(18px);
+    color: color("dark");
+    background: color("light");
+  
+    @media (min-width: 1200px) and (max-width: 1439px) {
+      font-size: get-vw-by-layout(20px, 1440);
+    }
+
+    @media (max-width: 450px) {
+        font-size: get-vw-by-layout(15px, 768);
+    }
+
+    @media (max-width: 320px) {
+        font-size: get-vw-by-layout(13px, 450);
+    }
 }
 
 h1 {

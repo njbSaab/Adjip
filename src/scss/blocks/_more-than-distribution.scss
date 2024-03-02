@@ -14,3 +14,20 @@
     }
   }
 }
+@media (max-width: 1200px){
+  .more_distribution {
+    .title {
+      padding-bottom: 40px;
+    }
+    .more_distribution_group {
+      grid-template-columns: 100%;
+      gap: rem(25px);
+    }
+    .more_distribution_list li{
+      @include fontSize(15)      
+    }
+    .more_distribution_group_gallery{
+      @include max-width-margin(550px, 100%, auto)
+    }
+  }
+}

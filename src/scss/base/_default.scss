@@ -92,7 +92,7 @@ footer {
 
 @media (max-width: 450px) {
   .pd-regular {
-    padding: rem(40px) 0 rem(50px);
+    padding: rem(40px) 0 rem(40px);
   }
   section .title{
     @include fontSize(28)

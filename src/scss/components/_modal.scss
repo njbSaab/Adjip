@@ -78,3 +78,8 @@
 .uk-notification-close {
   visibility: hidden;
 }
+@media (max-width: 1200px) {
+  .nj_modal .input-wrapper .uk-input{
+    font-size: 12px;
+  }
+}

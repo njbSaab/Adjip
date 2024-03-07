@@ -97,3 +97,8 @@
   background: linear-gradient(90deg, #222d38dd, #76a0cd92);
   backdrop-filter: blur(10px);
 }
+@media (max-width: 1200px) {
+  .nj_sidenav .nj_sidenav_language label{
+    font-size: 12px;
+  }
+}

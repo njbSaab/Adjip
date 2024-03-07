@@ -65,7 +65,6 @@
 @media (max-width: 1024px){
   .advateges .uk-slideshow{
     height: auto;
-    padding-bottom: 50px;
   }
   .advateges [class*=uk-position-center-right] {
     top: calc(40% - var(--uk-position-margin-offset));
@@ -91,11 +90,14 @@
 
 }
 @media (max-width: 450px){
+  .advateges{
+    padding-top: rem(40px);
+  }
   .advateges .title{
-    padding-bottom: 20px;
+    padding: 0 0 20px;
   }
   .advateges .uk-slideshow{
-    height: 600px;
+    height: 630px;
   }
   .advateges .uk-slideshow ul{
     height: 100%;

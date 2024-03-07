@@ -1,6 +1,15 @@
 #more-than-distr-slider .splide__track {
   height: 550px;
   border-radius: 50%;
+  @media (max-width: 450px){
+    height: 400px;
+  }
+  @media (max-width: 390px){
+    height: 350px;
+  }
+  @media (max-width: 350px){
+    height: 300px;
+  }
 }
 
 .splide__slide.is-active.is-visible {

@@ -124,6 +124,9 @@
 }
 @media (max-width: 550px){
   .partners{
+   &.pd-regular{
+      padding: rem(40px) 0 0;
+    }
     .title{
       padding-bottom: 20px;
     }
@@ -147,8 +150,10 @@
     .uk-card-body p {
       @include fontSize(13)
     }
+    .parters_arrow_wrapp{
+      padding-top: 0;
+    }
   }
-  
   .partners .partners_list {
     gap: 10px;
   }

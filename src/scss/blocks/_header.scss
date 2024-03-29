@@ -43,6 +43,26 @@
     align-items: center;
     gap: 50px;
   }
+  .uk-button-default:active {
+    background: color(main);
+    color: color(light);
+    filter: brightness(115%);
+    border-color: color('main');
+    transition: .3s ease-in-out;
+  }
+  .menu-btn-mobile.uk-button:is(:hover, :focus-visible){
+    filter: brightness(115%);
+  }
+  .menu-btn-mobile.uk-button:active {
+    filter: brightness(85%);
+  }
+
+  .uk-button-default:hover {
+    background-color: transparent;
+    border-color: transparent;
+    color: color(light-bg);
+    transition: .3s ease-in-out;
+  }
 }
 @media (max-width: 1200px){
   .header{

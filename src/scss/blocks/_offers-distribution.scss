@@ -82,7 +82,10 @@
       display: flex;
       align-items: baseline;
       gap: 10px;
-      max-width: 350px;
+      width: 100%;
+      p{
+        max-width: 350px;
+      }
     }
     li .svg_wrapp {
       flex: 0 0 24px;
@@ -200,6 +203,14 @@
       .title_second{
         padding: 20px;
         margin-bottom: 0;
+      }
+      li:last-child{
+        svg{
+          width: 30px;
+        }
+      }
+      li .svg_wrapp{
+        padding: 15px 20px;
       }
     }
     .list-description{

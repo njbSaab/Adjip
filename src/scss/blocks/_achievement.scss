@@ -12,6 +12,9 @@
     // animation: slide-in-out 5s linear infinite forwards;
     z-index: 1;
   }
+  .title{
+    text-align: center;
+  }
 }
 
 .achievement .achievement_wrapper {
@@ -43,9 +46,10 @@
   width: 50%;
   min-height: 500px;
   overflow: hidden;
-  background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20230705/pngtree-golden-achievement-unlocked-celebrating-your-success-on-a-blue-3d-background-image_3808269.jpg);
-  background-size: cover;
+  background-image: url(../../img/logo-without-text-black.svg);
+  background-size: contain;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .achievement .achievement_images img {

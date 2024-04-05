@@ -7,22 +7,27 @@ npm run build - сборка бандла
 npm run format - запуск prettier
 ---------------
 
+Сбросьте кеш npm:
+npm cache clean --force
+
+Удалите файл package-lock.json:
+rm -f package-lock.json
+
+Удалите папку node_modules:
+rm -rf node_modules
+
+
+Установите зависимости заново:
+npm install
+
+//instal node
+nvm install node
+
+
+
+
+
 //main 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YENTO</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-    />
-    <link rel="stylesheet" href="./css/style.min.css">
-
-</head>
 <body>
 
     {% include "components/header.html" %}

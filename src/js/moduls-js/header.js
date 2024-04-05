@@ -1,3 +1,5 @@
+import { ScrollManager } from './components-js/scroll-manager-for-header.js';
+
 class HeaderModule {
   constructor() {
     this.lastScrollY = window.scrollY;
@@ -6,9 +8,10 @@ class HeaderModule {
     this.menuBtnMobile = document.querySelector(".menu-btn-mobile");
     this.closeBtn = document.querySelector(".uk-offcanvas-close");
     this.mainPageTop = document.querySelector(".main_page")?.offsetTop || 0;
-    this.offcanvas = UIkit.offcanvas(this.overlaySidenav);
     this.sideNav = document.querySelector(".side-nav");
     this.offcanvasBar = document.querySelector(".uk-offcanvas-bar");
+    this.scrollManager = new ScrollManager(this.overlaySidenav, this.header);
+
     this.init();
   }
 
@@ -18,12 +21,11 @@ class HeaderModule {
     this.addCloseButtonListener();
     this.addOverlayListener();
     this.addSideNavListener();
-    this.addMenuButtonHoverListener();
   }
 
   throttle(func, limit) {
     let inThrottle;
-    return function () {
+    return function() {
       const args = arguments;
       const context = this;
       if (!inThrottle) {
@@ -37,52 +39,34 @@ class HeaderModule {
   addScrollListener() {
     const throttledScroll = this.throttle(() => {
       if (window.scrollY > this.lastScrollY) {
-        this.header.style.top = "-100px"; // Сначала изменяем позицию
+        this.header.style.top = "-100px";
         if (window.scrollY > 0) {
-          setTimeout(() => { // Добавляем задержку перед добавлением класса 'inverse'
+          setTimeout(() => {
             this.header.classList.add("inverse");
-          }, 150); // Задержка должна быть больше, чем время анимации скрытия заголовка
+          }, 150);
         }
       } else {
         if (window.scrollY <= this.mainPageTop || window.scrollY <= 100) {
-          this.header.classList.remove("inverse"); // Удаляем класс 'inverse' сразу
+          this.header.classList.remove("inverse");
         }
-        this.header.style.top = "0"; // Затем изменяем позицию
+        this.header.style.top = "0";
       }
-  
+
       this.lastScrollY = window.scrollY;
     }, 100);
-  
+
     window.addEventListener("scroll", throttledScroll);
   }
-  
 
   setHeaderStyle(top, inverseAction) {
     this.header.style.top = top;
     this.header.classList[inverseAction]("inverse");
   }
 
-  addMenuButtonHoverListener() {
-    this.menuBtnMobile.addEventListener('mouseenter', () => {
-      this.offcanvas.show();
-      this.setHeaderStyle("-100%", "remove");
-    });
-  }
-
   addMenuButtonListener() {
     this.menuBtnMobile.addEventListener("click", () => {
       this.setHeaderStyle("-100%", "remove");
     });
-  }
-
-  addSideNavListener() {
-    if (this.sideNav && this.offcanvasBar) {
-      this.sideNav.addEventListener("click", (event) => {
-        if (!this.offcanvasBar.contains(event.target)) {
-          this.setHeaderStyle("0", "add");
-        }
-      });
-    }
   }
 
   addCloseButtonListener() {
@@ -94,11 +78,23 @@ class HeaderModule {
   }
 
   addOverlayListener() {
-    this.overlaySidenav.addEventListener("click", () => {
-      if (!document.querySelector(".uk-offcanvas-bar")) {
-        this.setHeaderStyle("0", "add");
+    this.overlaySidenav.addEventListener("click", (event) => {
+      if (!this.offcanvasBar.contains(event.target) || event.target.classList.contains("uk-offcanvas-close")) {
+        if (!event.target.closest('.uk-nav-primary') && !event.target.closest('a[href="#"]')) {
+          this.setHeaderStyle("0", "add");
+        }
       }
     });
+  }
+
+  addSideNavListener() {
+    if (this.sideNav && this.offcanvasBar) {
+      this.sideNav.addEventListener("click", (event) => {
+        if (event.target.closest('.uk-parent')) {
+          this.scrollManager.handleSideNavClick(event);
+        }
+      });
+    }
   }
 }
 

@@ -2,6 +2,9 @@ $main-dark: #222d38;
 $light: #ffffff;
 $main: #76a0cd;
 
+html{
+  scroll-behavior: smooth;
+}
 .modal.uk-modal-dialog {
   width: fit-content;
 }

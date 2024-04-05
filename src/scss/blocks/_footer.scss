@@ -8,7 +8,7 @@
   .container{
     width: 100%;
   }
-  
+
   .footer_inner {
     background: color(light);
     backdrop-filter: blur(50px);
@@ -37,11 +37,16 @@
       text-align: center;
       padding: 0 0 0 57px;
       margin: 0;
+      position: relative;
+
     }
     .title span {
       padding-left: 16px;
       @include fontSize(28);
       opacity: .7;
+      position: absolute;
+      right: -120%;
+      top: 2%;
     }
   }
   a:hover {
@@ -179,7 +184,8 @@
 }
 @media (max-width: 1250px){
   .footer .title_wrapp .title span{
-    @include fontSize(24px)
+    @include fontSize(24px);
+    position: static;
   }
   .footer .w-70 {
     width: 40%;

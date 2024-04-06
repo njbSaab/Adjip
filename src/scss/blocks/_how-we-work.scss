@@ -1,6 +1,6 @@
-.how-we-work {
+.how_we_work {
   position: relative;
-  background-image: url("../../img/offer/offer.png");
+  background-image: url("../../img/more-than-distrb/office2.jpg");
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -15,7 +15,7 @@
     opacity: 0.8;
     z-index: 0;
   }
-  .how-we-work_content {
+  .how_we_work-content {
     height: 100%;
     position: relative;
     z-index: 1;
@@ -36,20 +36,21 @@
         position: absolute;
         content: "";
         border-radius: 50%;
-        background: color(main-dark);
+        background: #222d386a;
         width: 350px;
         height: 350px;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
         z-index: -1;
+        backdrop-filter: blur(9px);
       }
 
       &::after {
         position: absolute;
         content: "";
         border-radius: 0 100% 0 0;
-        background: color(main);
+        background: $main;
         width: 175px;
         height: 175px;
         right: 27px;
@@ -149,22 +150,22 @@
   }
 }
 @media (max-width: 1250px){
-  .how-we-work .item_title h2{
+  .how_we_work .item_title h2{
     @include fontSize(24, 36);
     padding-bottom: 0;
 }
-  .how-we-work .item_title h2::before{
+  .how_we_work .item_title h2::before{
     width: 200px;
     height: 200px;
   }
-  .how-we-work .item {
+  .how_we_work .item {
     max-width: 225px;
   }
-  .how-we-work .item img {
+  .how_we_work .item img {
     height: 150px;
     width: 600px;
 }
-  .how-we-work .item_title h2::after{
+  .how_we_work .item_title h2::after{
     width: 100px;
     height: 100px;
     right: -41px;
@@ -172,14 +173,14 @@
   }
 }
 @media (max-width: 785px){
-  .how-we-work .item img {
+  .how_we_work .item img {
     height: 175px;
   }
-  .how-we-work .item_title h2::before {
+  .how_we_work .item_title h2::before {
     width: 150px;
     height: 150px;
   }
-  .how-we-work .item_title h2::after {
+  .how_we_work .item_title h2::after {
     width: 75px;
     height: 75px;
     right: -2px;
@@ -187,21 +188,21 @@
   }
 }
 @media (max-width: 600px){
-  .how-we-work .list {
+  .how_we_work .list {
     visibility: hidden;
   }
-  .how-we-work .item.item_title{
+  .how_we_work .item.item_title{
     visibility: hidden;
   }
-  .how-we-work {
+  .how_we_work {
     position: relative;
     background-image: url("../../img/offer/offer.png");
     height: auto;
   }
-  .how-we-work .how-we-work_content {
+  .how_we_work .how_we_work-content {
     height: 350px;
   }
-  .how-we-work .mobile_list_img{
+  .how_we_work .mobile_list_img{
     position: absolute;
     left: 50%;
     top: 50%;

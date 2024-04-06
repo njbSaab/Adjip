@@ -1,19 +1,49 @@
 .main_page {
-  height: 100vh;
+  height: 100dvh;
   width: 100%;
-  position: relative;
-  &.lazy-background{
-    background-image: url("/img/main-bg.png");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: 0;
-    background-color: color(main);
-  }
   h1 {
     color: color(light);
     margin: 0;
   }
+
+  .video_inner{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    z-index: 0;
+    
+    &::after{
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 110%;
+      background-color: #76a0cda6;
+    }
+    video{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: fixed;
+      background-attachment: fixed;
+    }
+    img{
+      display: none;
+    }
+  }
+
+  .video_inner video,
+  .video_inner img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: fixed;
+    background-attachment: fixed;
+  }
+
   .main_wrapper {
     display: flex;
     align-items: center;
@@ -21,6 +51,8 @@
   }
   .main_banner {
     padding-top: rem(20px);
+    position: relative;
+    z-index: 1;
   }
   .main_title_wrapper {
     display: flex;
@@ -37,13 +69,16 @@
       height: 100%;
       width: rem(6px);
       background: color("light");
+      position: relative;
+      z-index: 1;
     }
   }
 
   .main_footer_wrapper {
     position: relative;
-    z-index: 0;
+    z-index: 1;
     padding-left: rem(77px);
+
     .main_list {
       padding: 0;
       margin: 0;
@@ -72,21 +107,21 @@
       }
     }
   }
-  @keyframes drawn {
-    0% {
-      stroke-dashoffset: 1500; /* Замените на фактическую длину вашего пути */
-    }
-    100% {
-      stroke-dashoffset: 0;
-    }
-  }
+
+  // @keyframes drawn {
+  //   0% {
+  //     stroke-dashoffset: 3500;
+  //   }
+  //   100% {
+  //     stroke-dashoffset: 0;
+  //   }
+  // }
+  
   .drawn-path {
-    stroke-dasharray: 3000;
-    stroke-dashoffset: 1000;
-    animation: drawn 15s linear infinite alternate;
     stroke: white;
-    stroke-width: 2.5;
+    stroke-width: 1.5;
   }
+  
 }
 @media (max-width: 1200px) {
   .main_page{
@@ -131,9 +166,21 @@
 }
 @media (max-width: 450px) {
   .main_page{
-    height: 85vh;
-    padding-bottom: 30px;
+    padding: 120px 0 30px;
+    height: 85dvh;
+    .main_banner{
+      padding-top: 0;
+    }
+    .video_inner{
+      video{
+        display: none;
+      }
+      img{
+        display: block;
+      }
+    }
   }
+
   .main_page .main_title{
     @include fontSize(32);
   }

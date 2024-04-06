@@ -8,12 +8,28 @@ html{
 .modal.uk-modal-dialog {
   width: fit-content;
 }
-.uk-open .modal.uk-modal-dialog {
-  transform: translateY(80%);
+.nj_modal.first-modal{
+  h2{
+    margin-bottom: 0px;
+  }
 }
-.registration_modal .uk-modal-dialog {
-  transform: translateY(15%) !important;
-}
+// .uk-open .modal.uk-modal-dialog {
+//   transform: translateY(80%);
+// }
+// .registration_modal .uk-modal-dialog {
+//   transform: translateY(15%) !important;
+// }
+
+
+// .lazy-background{
+//     background-image: url("../../img/main-bg.png");
+//     background-attachment: fixed;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     z-index: 0;
+//     background-color: color(main);
+//   }
+
 .nav-wrapper .parent-link:hover {
   color: rgba(255, 255, 255, 0.9);
 }

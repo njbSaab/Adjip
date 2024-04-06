@@ -85,6 +85,8 @@
       width: 100%;
       p{
         max-width: 350px;
+        color: color($main-dark);
+        opacity: .7
       }
     }
     li .svg_wrapp {

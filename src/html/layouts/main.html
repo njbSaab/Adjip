@@ -27,22 +27,35 @@
     <link rel="shortcut icon" href="../../img/logo-without-text-black.svg" type="image/x-icon">
   </head>
   <body>
+    
+
     {% include "components/header.html" %}
 
-    <main class="content">{% block content %}{% endblock %}</main>
+
+    <main class="content">{% block content %}
+      {% endblock %}</main>
 
     {% include "components/footer.html" %}
 
-    <script src="./js/jquery.min.js"></script>
-    <script src="./js/swiper-bundle.min.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          var modal = UIkit.modal('#first-modal');
+      
+          if (modal) {
+              modal.show();
+          }
+      });
+      </script>
+      
+    <script src="./js/jquery.min.js" defer></script>
+    <script src="./js/swiper-bundle.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.10/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.10/dist/js/uikit-icons.min.js"></script>
 
-    <!-- <script src="./js/jquery.validate.min.js"></script>
-    <script src="./js/jquery.maskedinput.min.js"></script> -->
 
-    <script src="./js/script.js"></script>
-    <script src="./js/moduls-js/header.js" type="module"></script>
-    <script src="./js/imports.js" type="module"></script>
+    <script src="./js/script.js" defer></script>
+    <script src="./js/moduls-js/header.js" type="module" defer></script>
+    <script src="./js/imports.js" type="module" defer></script>
   </body>
 </html>

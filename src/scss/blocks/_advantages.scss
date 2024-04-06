@@ -1,4 +1,5 @@
 .advateges {
+  z-index: 1;
   .title {
     transform: translateY(100px);
   }
@@ -36,10 +37,14 @@
     a {
       border: 1px solid color(main);
       border-radius: 50%;
-      padding: 14.97px 17.72px 15px 18.17px;
+      padding: rem(15px) rem(18px);
+      display: flex;
+      place-items: center;
+      backdrop-filter: blur(7px);
       svg {
-        width: 15px;
-        height: 15px;
+
+        width: rem(15px);
+        height: rem(15px);
       }
     }
     a:first-child {
@@ -111,7 +116,11 @@
     position: relative;
     transform: translateY(-62px);
   }
+  .advateges .uk-card-default .uk-card-title {
+    font-weight: 600;
+  }
   .advateges .uk-list li {
     padding-left: 0;
+    @include fontSize(14)
   }
 }

@@ -7,7 +7,7 @@
 </button>
 
 <div class="enter_modal nj_modal" id="modal-enter" uk-modal>
-  <div class="modal uk-modal-dialog uk-modal-body uk-text-center">
+  <div class="modal uk-modal-dialog uk-margin-auto-vertical uk-modal-body uk-text-center">
     <div class="title_wrapper">
       <button
         class="uk-modal-close uk-icon uk-close close-btn"
@@ -69,6 +69,23 @@
         {% include "components/registration-form.html" %} {% include
         "components/forget-form.html" %}
       </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="nj_modal first-modal" id="first-modal" uk-modal="bg-close: false">
+  <div class="modal uk-modal-dialog uk-margin-auto-vertical uk-modal-body uk-text-center">
+    <div class="title_wrapper">
+      <h2 class="uk-modal-title">Вам исполннилось <span class="uk-text-danger">18 лет?</spanv> </h2>
+    </div>
+    <div class="uk-text-center auth_wrapper btns-wrapper">
+      <button 
+      class="uk-button uk-button-primary uk-modal-close" type="button"
+      onclick="UIkit.notification({message: '<span uk-icon=\'icon: check\'></span> <span>Отлично, мы рады Вас видеть</span>', status:'success', timeout: '5000' })"
+      >
+        Да, мне есть 18 лет
+      </button>
     </div>
   </div>
 </div>

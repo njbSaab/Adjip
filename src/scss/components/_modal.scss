@@ -37,7 +37,7 @@
   }
   .btns-wrapper {
     .uk-button {
-      margin: 15px 0 25px;
+      margin: 15px 0;
     }
   }
   .auth_wrapper {
@@ -80,6 +80,13 @@
 }
 @media (max-width: 1200px) {
   .nj_modal .input-wrapper .uk-input{
-    font-size: 12px;
+    font-size: 15px;
+  }
+  .nj_modal .title_wrapper .close-btn {
+    right: -10px;
+    top: -10px;
+  }
+  .nj_modal .auth_wrapper .nj-default-btn{
+    @include fontSize(14px)
   }
 }

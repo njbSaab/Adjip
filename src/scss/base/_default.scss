@@ -1,6 +1,10 @@
 section,
 footer {
   overflow: hidden;
+  z-index: 1;
+  position: relative;
+  background: #fff;
+
   .title {
     font-family: "Comfortaa", sans-serif;
     font-optical-sizing: auto;
@@ -97,7 +101,9 @@ footer {
   section .title{
     @include fontSize(28)
   }
-
+.splide__arrows .splide__arrows--ltr{
+  padding-bottom: 15px;
+}
   .nj-p22 {
     font-size: rem(16px);
   }

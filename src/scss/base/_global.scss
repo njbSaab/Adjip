@@ -12,6 +12,16 @@ html{
   h2{
     margin-bottom: 0px;
   }
+  .uk-button{
+    width: fit-content;
+  }
+  .no{
+    background: rgb(205, 9, 9) !important;
+  }
+
+}
+.partners .uk-card-body p {
+  overflow: hidden;
 }
 // .uk-open .modal.uk-modal-dialog {
 //   transform: translateY(80%);

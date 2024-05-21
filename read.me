@@ -1,5 +1,5 @@
 перевая команда 
-suod npm i
+npm i
 ---------------
 npm run start - запуск
 npm run clean - очистка dist
@@ -16,13 +16,26 @@ rm -f package-lock.json
 Удалите папку node_modules:
 rm -rf node_modules
 
-
 Установите зависимости заново:
+npm update
 npm install
 
 //instal node
-nvm install node
+1. Install nvm:
+If you're on a Unix-based system (like macOS or Linux), you can install nvm by running the following commands in your terminal:
 
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+source ~/.bashrc
+nvm install 18.17.1 
+nvm use 18.17.1  # Use this version
+
+3. Verify nvm Installation:
+nvm -v
+
+5. Reinstall Node.js Packages:
+
+rm -rf node_modules package-lock.json 
+npm install 
 
 
 

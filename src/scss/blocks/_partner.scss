@@ -27,17 +27,21 @@
   }
   .uk-card-body p {
     margin: 15px 0 20px;
-    height: 100px;
+    height: 155px;
     @include fontSize(15)
   }
   .uk-slider-items li{
     a{
       position: absolute;
-      height: 100%;
+      height: auto;
       width: 100%;
       z-index: 1;
       cursor: pointer;
     }
+  }
+
+  ul {
+     padding-left: 0px; 
   }
   .uk-card-body .uk-card-title {
     margin-bottom: 0;

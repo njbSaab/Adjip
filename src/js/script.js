@@ -1,3 +1,6 @@
+
+
+
 document.addEventListener("DOMContentLoaded", (event) => {
   let isAnimating = false;
 
@@ -47,4 +50,8 @@ document.addEventListener("DOMContentLoaded", function() {
           lazyBackgroundObserver.observe(lazyBackground);
       });
   }
+
+
+
 });
+
